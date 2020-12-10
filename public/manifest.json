@@ -1,0 +1,25 @@
+{
+  "short_name": "DApp Crowdfunding Ether",
+  "name": "Une application de crowdfunding en Ether",
+  "icons": [
+    {
+      "src": "ethlogo.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "ethlogo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "ethlogo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#00FFFF",
+  "background_color": "#ffffff"
+}
