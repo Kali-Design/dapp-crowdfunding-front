@@ -1,4 +1,6 @@
 import { ethers } from 'ethers'
+
+
 // Si connecté à MetaMask renvoie le compte actuel
 // sinon retourne null
 export const isConnected2MetaMask = async () => {

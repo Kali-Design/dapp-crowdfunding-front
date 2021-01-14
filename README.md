@@ -1,71 +1,163 @@
-# Getting Started with Create React App
+# **CrowdFunding en Ether**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![forthebadge](https://forthebadge.com/images/badges/its-not-a-lie-if-you-believe-it.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
 
-## Available Scripts
+Crowdfunding Ether est une DAPP s'inspire d'un Smart Contract Escrow
 
-In the project directory, you can run:
+## **Pour commencer**
 
-### `yarn start`
+Entrez ici les instructions pour bien débuter avec le projet...
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### **Pré-requis**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- React.js
+- Node.js
+- Solidity
+- ChakraUI
+- Mocha / Chai
+- Truffle
+- yarn / npm
 
-### `yarn test`
+### **Installation**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ## yarn install
 
-### `yarn build`
+```zsh
+yarn install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ## Chakra ui install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```zsh
+yarn add @chakra-ui/react
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
 
-### `yarn eject`
+- ## Openzeppelin contracts
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```zsh
+npm install @openzeppelin/contracts
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- ## Truffle
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`Truffle` is a development environment, testing framework and deployment pipeline for Ethereum smart contracts.  
+While we were working on `remix` since the beginning we will now switch to `Truffe` and write our code on `vscode`.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Official documentation: https://www.trufflesuite.com/docs/truffle/overview
 
-## Learn More
+### **Install Truffle**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Install truffle globally.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```zsh
+% npm install -g truffle
+```
 
-### Code Splitting
+Check if everything is installed with:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```zsh
+$ truffle version
+Truffle v5.1.55 (core: 5.1.55)
+Solidity v0.5.16 (solc-js)
+Node v12.19.0
+Web3.js v1.2.9
 
-### Analyzing the Bundle Size
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- ## configuring networks
 
-### Making a Progressive Web App
+Since we are using public nodes, we will need to sign all our transactions locally. We will use @truffle/hdwallet-provider to do this, setting it up with our mnemonic. We will also tell the provider how to connect to the test network by using the Infura endpoint.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```zsh
+% yarn add --dev @truffle/hdwallet-provider
+```
 
-### Advanced Configuration
+- ## Directory `test/`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+We will use the OpenZepplin test helpers and test environment.
+Install these packages as dev dependencies:
 
-### Deployment
+```zsh
+yarn add --dev @openzeppelin/test-helpers @openzeppelin/test-environment mocha chai
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+We will no use `truffle test` for running tests since we switched to OpenZepplin test env.
+So make Mocha the entry point of the test suite by modifying your _package.json_:  
+add to _package.json_:
 
-### `yarn build` fails to minify
+```json
+"scripts": {
+    "test": "npx mocha --exit --recursive"
+},
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+we can now run test with `yarn test` command.`yarn test` will not compile your smart contracts. You will have to compile your smart contracts with`truffle compile` first.
+
+### **Usage**
+
+Create a directory for your project and `cd` inside:
+
+```zsh
+% mkdir myProject
+% cd myProject
+```
+
+Initialize a Truffle project, the git repository and a nodejs project:
+
+```zsh
+% truffle init
+% git init
+% yarn init
+```
+
+`Truffle` will generate build files while compiling your project in the `build/` directory.  
+This directory has to be added into `.gitignore`. (You can use the same .gitignore template generated by `djinit`).
+
+3 directories and 1 config file are generated by the Truffle project initialization:
+
+- `contracts/`: Directory for solidity contracts
+- `migrations/`: Directory for scriptable deployment files
+- `test/`: Directory for test files for testing the project and the smart contracts.
+- `truffle-config.js`: Truffle configuration file
+
+Ensuite vous pouvez montrer ce que vous obtenez au final...
+
+## Démarrage
+
+```zsh
+ % yarn start
+```
+
+## Fabriqué avec
+
+Programmes/logiciels/ressources utilisés pour développer le projet
+
+- [Solidity](https://docs.soliditylang.org/en/v0.6.0/) - Language blockchain
+- [VSCode](https://code.visualstudio.com/) - Editeur de textes
+- [Chakra-UI](https://chakra-ui.com/) - Application React
+- [Web3](https://web3js.readthedocs.io/en/v1.3.0/) - Application Ethereum JavaScript API
+
+## Versions
+
+**Dernière version stable :** 1.0
+
+Git : [Cliquer pour afficher](https://github.com/Kali-Design/dapp-crowdfunding-front)
+
+## Auteur
+
+- **Henri-Michel LEOCADIE** _alias_ [Kali-Design](https://github.com/kali-Design)
+
+**Avec les conseils de nos formateurs Alyra :**
+
+- [Paulina Hetman] _alias_ [Pehaa](https://github.com/pehaa)
+- [Sofiane ] _alias_ [AbsoluteVirtueXI](https://github.com/AbsoluteVirtueXI)
+- [Franck Chen] _alias_ [Franck]()
+
+Merci !
+
+## License
+
+Ce projet est sous licence `MIT` - voir le fichier [LICENSE.md](LICENSE.md) pour plus d'informations
 # dapp-crowdfunding-front

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useReducer } from 'react'
 import {
   Heading,
@@ -5,6 +6,7 @@ import {
   VStack,
   Button,
   HStack,
+
   Box,
   Badge,
   NumberInput,
@@ -24,6 +26,8 @@ import {
     DepositCrowdFunding_abi,
 } from '../contracts/DepositCrowdfunding'
 // réducteur pour mettre à jour l'état de web3: vérifier si web3 est injecté, s'il est connecté à MetaMask, obtenir le compte connecté, équilibrer ...
+
+
 const web3Reducer = (state, action) => {
   switch (action.type) {
     case 'SET_isWeb3':
@@ -41,7 +45,7 @@ const web3Reducer = (state, action) => {
     case 'SET_balance':
       return { ...state, balance: action.balance }
     case 'SET_CONTRACT_depositCrowdfunding':
-        return { ...state, despositCrowdfunding: action.despositCrowdfunding}  
+        return { ...state, depositCrowdfunding: action.depositCrowdfunding}  
     default:
       throw new Error(`Unhandled action ${action.type} in web3Reducer`)
   }
@@ -72,8 +76,9 @@ const dappReducer = (state, action) => {
 const initialDappState = {
   donateValue: 1,
   isConnecting: false,
-  myAddr: '0x274E6FE67Fe1CbA1Ab80e27CEf1f660Ba0Ab0C6a',
+  myAddr: '0x461F9D6151fD324BA86Cc2B097226208e976e40B',
 }
+
 
 function Main() {
   const [web3State, web3Dispatch] = useReducer(web3Reducer, initialWeb3State)
@@ -196,11 +201,11 @@ function Main() {
       // les informations du Smart Contract (adresse et ABI) valider par Metamask
       web3Dispatch({
         type: 'SET_CONTRACT_depositCrowdfunding',
-        depositCrowdfunding: new ethers.Contract(
+        depositCrowdFunding: new ethers.Contract(
           // eslint-disable-next-line no-undef
-          DepositCrowdfunding_address,
+          DepositCrowdFunding_address,
           // eslint-disable-next-line no-undef
-          DepositCrowdfunding_abi,
+          DepositCrowdFunding_abi,
           web3State.signer
         ),
       })
@@ -208,12 +213,15 @@ function Main() {
     // Smart Contract Crowdfunding signer dans Metamask
   }, [web3State.signer, web3State.network, web3State.isEnabled])
 
+  
+  
   return (
     // Affichage de page frontend - Status de la page -information du compte utilisateur 
     <>
       <VStack>
-        <Heading>Application de Crowdfunding en Ether</Heading>
-        <Heading mb={10} size="lg">
+
+        <Heading fontFamily="Montserrat" mb={10}>Application de Crowdfunding en Ether</Heading>
+        <Heading fontFamily="Montserrat" mb={10} size="lg">
           Les détails de votre compte avec Metamask
         </Heading>
 

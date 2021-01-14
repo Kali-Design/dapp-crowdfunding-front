@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import "bootstrap/dist/css/bootstrap.css"
 import reportWebVitals from './reportWebVitals'
 import * as serviceWorker from "./serviceWorker"
 import { ChakraProvider, theme } from '@chakra-ui/react'
 import 'focus-visible/dist/focus-visible'
 import App from './App'
+
 
 ReactDOM.render(
   <React.StrictMode>
