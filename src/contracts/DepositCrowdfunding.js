@@ -1,28 +1,29 @@
-export const DepositCrowdFunding_address = '0xcDf4C8AC61eE80c55367CE347742766a6Ea3C0D2'
+/* eslint-disable */
+export const DepositCrowdFunding_address = '0x795f7786a6DE765d9e680e902C3b62316869Df6f'
 
 export const DepositCrowdFunding_abi = [
   {
     "inputs": [],
-    "name": "last_completed_migration",
+    "name": "deposit",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function",
+    "payable": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "balanceOf",
     "outputs": [
       {
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  },
-  {
-    "inputs": [],
-    "name": "owner",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -32,14 +33,38 @@ export const DepositCrowdFunding_abi = [
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "dst",
+        "type": "address"
+      },
+      {
         "internalType": "uint256",
-        "name": "completed",
+        "name": "amount",
         "type": "uint256"
       }
     ],
-    "name": "setCompleted",
+    "name": "transfer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address payable",
+        "name": "_to",
+        "type": "address"
+      }
+    ],
+    "name": "withdraw",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   }
 ]
+

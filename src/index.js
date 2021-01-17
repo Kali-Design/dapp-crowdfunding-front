@@ -3,14 +3,19 @@ import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 import * as serviceWorker from "./serviceWorker"
 import { ChakraProvider, theme } from '@chakra-ui/react'
+import { Web3Provider } from 'web3-hooks'
 import 'focus-visible/dist/focus-visible'
+
+
 import App from './App'
 
 
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider theme={theme} resetCSS={true}>
-      <App />
+      <Web3Provider>
+        <App />
+      </Web3Provider>
     </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
