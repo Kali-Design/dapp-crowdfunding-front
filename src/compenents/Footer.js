@@ -7,7 +7,7 @@ import Linkedin from '../assets/linkedin.svg'
 function Footer() {
   return (
 
-    <Box py={10} bg="brand.900" fontFamily="Montserrat">
+    <Box py={10} bg="blue.400" fontFamily="Montserrat">
 
       <Flex justifyContent="center" p={5} fontFamily="Montserrat">
         <Box>
@@ -20,7 +20,7 @@ function Footer() {
           <Image mx={5} borderRadius="full" boxSize="32px" objectFit="cover" src={Linkedin} alt="Linkedin" />
         </Box>
       </Flex>
-      <Text textAlign="center" color="white" >Crowdfunding aide humanitaire</Text>
+      <Text textAlign="center" color="white" >Enjoy Crowdfunding Aide Humanitaire®</Text>
     </Box>
 
 

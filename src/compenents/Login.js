@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import {
   ThemeProvider,
   theme,
@@ -9,15 +10,14 @@ import {
   Heading,
   IconButton,
   Text,
-  Link,
   FormControl,
   FormLabel,
   Input,
-  Form,
   Stack,
   Checkbox,
   Button,
 } from '@chakra-ui/react'
+
 
 // eslint-disable-next-line no-unused-vars
 const VARIANT_COLOR = 'teal'
@@ -26,10 +26,10 @@ function login() {
   return (
     <>
       <ThemeProvider theme={theme}>
-  
-          <CSSReset />
-          <LoginArea />
-        
+
+        <CSSReset />
+        <LoginArea />
+
       </ThemeProvider>
     </>
   )
@@ -72,7 +72,7 @@ const LoginHeader = () => {
 export const LoginForm = () => {
   return (
     <Box my={8} textAlign='left'>
-      <Form>
+      
         <FormControl>
           <FormLabel>Email address</FormLabel>
           <Input type='email' placeholder='Enter your email address' />
@@ -97,10 +97,11 @@ export const LoginForm = () => {
         </Stack>
 
         <Button variantColor={VARIANT_COLOR} width="full" mt={4}>
-          Sign In
+        <Link to="/personal">Sign In</Link>
         </Button>
-      </Form>
-
+         <center>       
+        <Text fontSize={15}>By clicking Register and Subscribe, you agree to Crowdfunding Terms of Service, Privacy Policy.</Text>
+        </center>  
     </Box>
   )
 }

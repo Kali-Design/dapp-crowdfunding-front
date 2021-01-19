@@ -5,8 +5,11 @@ import {
   DepositCrowdFunding_abi,
 } from './contracts/DepositCrowdfunding'
 import { useContract } from 'web3-hooks'
-import Dapp from './Dapp'
-import Login from './compenents/Login'
+//import Dapp from './Dapp'
+
+//import Homepage from './compenents/Homepage'
+import Dest from './Dest'
+
 
 export const DepositCrowdfundingContext = React.createContext(null)
 
@@ -16,8 +19,10 @@ function App() {
   return (
 
     <DepositCrowdfundingContext.Provider value={depositCrowdfunding}>
-      <Dapp />
-      <Login />
+      
+      <Dest />
+    
+      
       
     </DepositCrowdfundingContext.Provider>
 
