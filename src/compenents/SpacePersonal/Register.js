@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import {
   Heading,
   FormControl,
@@ -8,8 +9,10 @@ import {
   VStack,
   Button,
   Center,
-  useToast,/*  */
+  useToast,
+  Box,
 } from '@chakra-ui/react'
+
 
 function Register() {
   const [username, setUsername] = useState('')
@@ -39,62 +42,62 @@ function Register() {
     <>
       <VStack spacing={10}>
         <Heading mb={50}>Register</Heading>
-
-        <FormControl id="username" isRequired={true}>
-          <FormLabel>Username</FormLabel>
-          <Input
-            type="text"
-            value={username}
-            onChange={(event) => {
-              setUsername(event.currentTarget.value)
-            }}
-          />
-          <FormHelperText>Please enter a unique username</FormHelperText>
-        </FormControl>
-        <FormControl id="email" isRequired={true} mt={6}>
-          <FormLabel>Email address</FormLabel>
-          <Input
-            value={email}
-            type="email"
-            onChange={(event) => {
-              setEmail(event.currentTarget.value)
-            }}
-          />
-          <FormHelperText>Ethereum address</FormHelperText>
-        </FormControl>
-        <FormControl mt={6} id="address" isRequired={true}>
-          <FormLabel>Account</FormLabel>
-          <Input
-            value={address}
-            type="address"
-            onChange={(event) => {
-              SetAddress(event.currentTarget.value)
-            }}
-          />
-          <FormHelperText>We'll never share your email.</FormHelperText>
-        </FormControl>
-        <FormControl mt={6} id="password" isRequired={true}>
-          <FormLabel>Password</FormLabel>
-          <Input
-            value={password}
-            type="password"
-            onChange={(event) => {
-              setPassword(event.currentTarget.value)
-            }}
-          />
-          <FormHelperText>Choose a strong password</FormHelperText>
-        </FormControl>
-        <Center>
-          <Button
-            type="submit"
-            colorScheme="blue"
-            mt={10}
-            onClick={handleSubmit}
-          >
-            register
+        <Box>
+          <FormControl id="username" isRequired={true}>
+            <FormLabel>Username</FormLabel>
+            <Input
+              type="text"
+              value={username}
+              onChange={(event) => {
+                setUsername(event.currentTarget.value)
+              }}
+            />
+            <FormHelperText>Please enter a unique username</FormHelperText>
+          </FormControl>
+          <FormControl id="email" isRequired={true} mt={6}>
+            <FormLabel>Email address</FormLabel>
+            <Input
+              value={email}
+              type="email"
+              onChange={(event) => {
+                setEmail(event.currentTarget.value)
+              }}
+            />
+            <FormHelperText>Ethereum address</FormHelperText>
+          </FormControl>
+          <FormControl mt={6} id="address" isRequired={true}>
+            <FormLabel>Account</FormLabel>
+            <Input
+              value={address}
+              type="address"
+              onChange={(event) => {
+                SetAddress(event.currentTarget.value)
+              }}
+            />
+            <FormHelperText>We'll never share your email.</FormHelperText>
+          </FormControl>
+          <FormControl mt={6} id="password" isRequired={true}>
+            <FormLabel>Password</FormLabel>
+            <Input
+              value={password}
+              type="password"
+              onChange={(event) => {
+                setPassword(event.currentTarget.value)
+              }}
+            />
+            <FormHelperText>Choose a strong password</FormHelperText>
+          </FormControl>
+          <Center>
+            <Button
+              type="submit"
+              colorScheme="blue"
+              mt={10}
+              onClick={handleSubmit}
+            >
+              <Link to="/information">register</Link>
             </Button>
-        </Center>
-
+          </Center>
+        </Box>
       </VStack>
     </>
   )

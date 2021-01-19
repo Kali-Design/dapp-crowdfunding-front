@@ -1,7 +1,9 @@
 import React from 'react'
-import { Heading, Box, Button, Link, VStack } from '@chakra-ui/react'
+import { Link } from 'react-router-dom';
+import { Heading, Box, Button, VStack, Text } from '@chakra-ui/react'
 import Footer from './Footer'
 import Navbar from './Navbar'
+
 
 
 function Homepage() {
@@ -9,10 +11,13 @@ function Homepage() {
     <>
       <Navbar />
 
-      <Box py={10} fontFamily="Montserrat">
+      <Box p={130} fontFamily="Montserrat">
         <VStack>
-
-          <Heading  size="lg" fontSize="70px">CROWDFUNDING AIDE HUMANITAIRE </Heading>
+        <Text size="lg" fontSize={25}>Welcome to the Blockchain</Text>
+        
+          <Heading size="lg" fontSize="60px">CROWDFUNDING AIDE HUMANITAIRE ☘️</Heading>
+         
+          <Text fontSize={25}></Text>
 
 
         </VStack>

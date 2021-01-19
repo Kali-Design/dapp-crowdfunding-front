@@ -7,7 +7,7 @@ import Linkedin from '../assets/linkedin.svg'
 function Footer() {
   return (
 
-    <Box py={10} bg="blue.400" fontFamily="Montserrat">
+    <Box p={100} bg="blue.400" fontFamily="Montserrat">
 
       <Flex justifyContent="center" p={5} fontFamily="Montserrat">
         <Box>

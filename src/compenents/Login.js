@@ -38,9 +38,9 @@ function login() {
 const LoginArea = () => {
   return (
     <Flex minHeigh='100vh' width='full' align='center' justifyContent='center'>
-      <Box borderWidth={1} px={4} width='full' maxWidth='500px' borderRadius={4} textAlign='center' boxShadow='lg'>
+      <Box mt={20} borderWidth={1} px={4} width='full' maxWidth='500px' borderRadius={4} textAlign='center' boxShadow='lg'>
         <ThemeSelector />
-        <Box p={4}>
+        <Box p={4} >
           <LoginHeader />
           <LoginForm />
         </Box>
@@ -59,14 +59,14 @@ const ThemeSelector = () => {
 }
 
 const LoginHeader = () => {
-  return [
+  return (
     <Box textAlign='center'>
       <Heading>Sign in to your account</Heading>
       <Text>
         Or <Link color={`${VARIANT_COLOR}.500`}>Start your 14 days trial</Link>
       </Text>
     </Box>
-  ]
+  )
 }
 
 export const LoginForm = () => {
@@ -97,7 +97,7 @@ export const LoginForm = () => {
         </Stack>
 
         <Button variantColor={VARIANT_COLOR} width="full" mt={4}>
-        <Link to="/personal">Sign In</Link>
+        <Link to="/application">Sign In</Link>
         </Button>
          <center>       
         <Text fontSize={15}>By clicking Register and Subscribe, you agree to Crowdfunding Terms of Service, Privacy Policy.</Text>

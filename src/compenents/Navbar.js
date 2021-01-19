@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { Button, Box, Flex, Spacer, Text, useDisclosure} from '@chakra-ui/react'
+import { Button, Box, Flex, Spacer, Text, useDisclosure } from '@chakra-ui/react'
 import {
   Popover,
   PopoverTrigger,
@@ -22,7 +22,7 @@ function Navbar() {
   const [web3State, login] = useContext(Web3Context)
 
   const { isOpen, onOpen, onClose } = useDisclosure()
-  
+
 
   return (
     <>
@@ -59,10 +59,11 @@ function Navbar() {
               </PopoverContent>
             </Portal>
           </Popover>
-          <Button name="button" _hover={{
-            bg: "teal.500",
-            color: "white",
-          }} bg="green.400" color="white" textTransform='uppercase'>
+          <Button ml={5}
+            name="button" _hover={{
+              bg: "teal.500",
+              color: "white",
+            }} bg="green.400" color="white" textTransform='uppercase'>
             <Link to="/login">Sign In</Link>
           </Button>
         </Box>
