@@ -19,11 +19,9 @@ function App() {
   return (
 
     <DepositCrowdfundingContext.Provider value={depositCrowdfunding}>
-      
+
       <Dest />
-    
-      
-      
+
     </DepositCrowdfundingContext.Provider>
 
   )
