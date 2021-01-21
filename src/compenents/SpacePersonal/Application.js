@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, web3State} from 'react'
 import { VStack, Heading, Box, Flex, Spacer, Container, Text, Stack, Input, InputGroup, InputRightAddon, Button } from '@chakra-ui/react'
 //import { } from 'ethers'
 import { Web3Context } from "web3-hooks"
@@ -12,6 +12,7 @@ function Application() {
   const DepositCrowdFunding = useContext(DepositCrowdfundingContext)
   const [inputDeposit, setInputDeposit] = useState(null)
   const [inputWithdraw, setInputWithdraw] = useState(null)
+
   const handleOnClickDeposit = async () => {
     try {
       const dps = await DepositCrowdFunding.deposit()
@@ -33,6 +34,12 @@ function Application() {
 
   return (
     <>
+
+{!web3State.isLogged && (
+        <>
+          <Button onClick={login}>login</Button>
+        </>
+      )}
       <VStack spacing={10}>
         <Heading mb={50}>Application</Heading>
       </VStack>
@@ -44,9 +51,9 @@ function Application() {
             <Text flex='1' textAlign='center'>Reward Balance</Text>
           </Flex>
           <Flex alignItems="center" mb={5}>
-            <Text flex='1' textAlign='center'> ETH</Text>
+            <Text flex='1' textAlign='center'> ETH 0.0</Text>
             <Spacer />
-            <Text flex='1' textAlign='center'> ETH</Text>
+            <Text flex='1' textAlign='center'> ETH 0.0</Text>
           </Flex>
         </Container>
       </Box>
@@ -55,7 +62,7 @@ function Application() {
           <Flex mb={5}>
             <Text fontWeight="bold">Fund Ether</Text>
             <Spacer />
-            <Text > Balance : </Text>
+            <Text > Balance 0.0 : </Text>
           </Flex>
           <Stack spacing={4}>
             <InputGroup size="sm">
