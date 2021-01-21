@@ -20,7 +20,7 @@ function Footer() {
           <Image mx={5} borderRadius="full" boxSize="32px" objectFit="cover" src={Linkedin} alt="Linkedin" />
         </Box>
       </Flex>
-      <Text textAlign="center" color="white" >Enjoy Crowdfunding Aide Humanitaire® 2020 | Dev by Henri-Michel LEOCADIE | Al right reserved</Text>
+      <Text textAlign="center" color="white" >Enjoy Crowdfunding Aide Humanitaire® 2020 | Dev by Henri-Michel LEOCADIE | All right reserved</Text>
     </Box>
 
 
